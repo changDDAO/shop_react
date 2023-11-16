@@ -7,16 +7,7 @@ main{
   font-size: 50px;
   display: flex;
 }
-.cart-icon{
-  margin-right: 0.45rem;
-  margin-bottom: 0.2rem;
-}
-.lo-success-icon{
-  margin-right: 0.4rem;
-}
-.login-icon{
-  margin-right: 0.5rem;
-}
+
 .cart-icon:hover{
   color: blue;
   font-size:1.2em;
@@ -33,9 +24,12 @@ main{
   color: blue;
   font-size:1.2em;
 }
+.cart-icon{
+  margin-bottom:5px;
+}
 
 .home-btn{
-  margin-left: 30px;
+  margin-top:10px;
   color: purple;
   font-weight: bold;
 }
@@ -46,6 +40,9 @@ main{
 .navbar{
   height: 3.5rem;
   font-size: 1.5rem;
+  border-radius:15px;
+  border-top: 3px solid darkslategray;
+  border-bottom: 3px solid #8d650c;
 }
 .right-icons{
   font-size: 1.7rem;
