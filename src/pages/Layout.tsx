@@ -17,23 +17,30 @@ function Layout() {
     function goHomePage() {
         navigate("/");
     }
+    function goBasketsPage(){
+        navigate("/baskets");
+    }
+
 
     return (
         <div>
-            <Navbar className="bg-body-tertiary justify-content-between navbar">
-                <IconButton style={{marginLeft:"30px"}}><h2 className="home-btn" onClick={goHomePage}
-                >SHOP</h2></IconButton>
-                <div className="right-icons justify-content-around">
-                    <IconButton><CartIcon className="cart-icon"/></IconButton>
-                    <IconButton><LoginPageIcon className="login-icon" fontSize="0.85em"
-                                               onClick={goLoginPage}/></IconButton>
-                    <IconButton><LoginIcon className="lo-success-icon"/></IconButton>
-                    <IconButton><LogoutIcon className="lo-fail-icon"/></IconButton>
-                </div>
-            </Navbar>
+        <Navbar bg="light" className="justify-content-between navbar">
+            <IconButton style={{marginLeft:"30px"}}><h2 className="home-btn" onClick={goHomePage}
+            >SHOP</h2></IconButton>
+            <div className="right-icons justify-content-around">
+                <IconButton><CartIcon className="cart-icon"
+                                      onClick={goBasketsPage}/></IconButton>
+                <IconButton><LoginPageIcon className="login-icon" fontSize="0.85em"
+                                           onClick={goLoginPage}/></IconButton>
+                <IconButton><LoginIcon className="lo-success-icon"/></IconButton>
+                <IconButton><LogoutIcon className="lo-fail-icon"/></IconButton>
+            </div>
+        </Navbar>
+        <Container>
             <main>
                 <Outlet/>
             </main>
+        </Container>
         </div>
     );
 }

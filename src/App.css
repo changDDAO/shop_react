@@ -1,6 +1,7 @@
 main{
   text-align: center;
   margin-top: 5rem;
+  width: 100%;
 }
 .login-container{
   border:3px solid black;
@@ -70,8 +71,38 @@ main{
   border-radius:15px;
   border-top: 3px solid darkslategray;
   border-bottom: 3px solid #8d650c;
+  box-shadow: 5px 7px 5px grey;
 }
 .right-icons{
   font-size: 1.7rem;
   margin-right:30px;
+}
+.home-btns{
+  margin-top:23px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.home-showing-text{
+  margin-top:20px;
+  display: flex;
+  text-align: start;
+  color:grey;
+}
+.products-container{
+  margin-top:15px;
+  width:1.2rem;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+.card-footer{
+  margin-top:5px;
+  display:flex;
+  justify-content: space-between;
+  font-size:10px;
+  align-items: center;
+  font-weight:bold;
+}
+.product-price-text{
+
 }

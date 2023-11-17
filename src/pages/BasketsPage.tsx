@@ -1,11 +1,11 @@
 import React from 'react'
 import {Spinner} from "react-bootstrap";
 
-function SpecificPage(){
+function BasketsPage(){
 return (
    <div>
-       <h1>Specific Page</h1>
+       <h1>BasketsPage</h1>
    </div>
 );
 }
-export default SpecificPage;
+export default BasketsPage;
