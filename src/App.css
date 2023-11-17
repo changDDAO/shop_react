@@ -1,6 +1,33 @@
 main{
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5rem;
+}
+.login-container{
+  border:3px solid black;
+  height:23rem;
+  text-align: start;
+  border-radius: 13px;
+  background-color: #e6e1e7;
+}
+.login-btns{
+  display: flex;
+  margin-top: 3rem;
+  justify-content: end;
+}
+.login-account-container{
+  margin-top: 2rem;
+}
+.login-password-container{
+  margin-top: 2rem;
+}
+#login-id-input{
+  border: 2px solid darkgrey;
+}
+#login-password-input{
+  border: 2px solid darkgrey;
+}
+.click-login-btn{
+  margin-left: 1.7rem;
 }
 
 .layout-head{
@@ -48,4 +75,3 @@ main{
   font-size: 1.7rem;
   margin-right:30px;
 }
-
