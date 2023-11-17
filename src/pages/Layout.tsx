@@ -21,7 +21,6 @@ function Layout() {
         navigate("/baskets");
     }
 
-
     return (
         <div>
         <Navbar bg="light" className="justify-content-between navbar">
@@ -29,18 +28,22 @@ function Layout() {
             >SHOP</h2></IconButton>
             <div className="right-icons justify-content-around">
                 <IconButton><CartIcon className="cart-icon"
-                                      onClick={goBasketsPage}/></IconButton>
+                                      onClick={goBasketsPage}
+                style={{position:"relative"}}/>
+                <div className="cart-icon-count">1</div>
+                </IconButton>
+
                 <IconButton><LoginPageIcon className="login-icon" fontSize="0.85em"
                                            onClick={goLoginPage}/></IconButton>
                 <IconButton><LoginIcon className="lo-success-icon"/></IconButton>
                 <IconButton><LogoutIcon className="lo-fail-icon"/></IconButton>
             </div>
         </Navbar>
-        <Container>
+        <div>
             <main>
                 <Outlet/>
             </main>
-        </Container>
+        </div>
         </div>
     );
 }

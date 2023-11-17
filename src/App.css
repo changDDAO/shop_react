@@ -103,6 +103,48 @@ main{
   align-items: center;
   font-weight:bold;
 }
-.product-price-text{
-
+.basket-product-container{
+  margin-top:10px;
+  display:flex;
+  justify-content: space-between;
+  padding-bottom:10px;
+  border-bottom: 3px solid lightgrey;
 }
+.baskets-left-section{
+  display:flex;
+}
+.baskets-left-img{
+  border-radius:20px;
+  background-color: #d0d9e0;
+  height:7rem;
+  width:7rem;
+}
+.left-description{
+  margin-left:17px;
+  font-size:19px;
+  text-align: start;
+}
+.baskets-center{
+  margin-top:50px;
+}
+.baskets-calc-btns{
+  display:flex;
+  margin-top:60px;
+  justify-content: end;
+  margin-right:10px;
+}
+.cart-icon-count{
+  border: 1px solid #0c0606;
+  border-radius:50px;
+  font-size: 11px;
+  position:absolute;
+  top:0;
+  right: 0;
+  width:1.5em;
+  background-color: #8d650c;
+  color: white;
+}
+
+
+
+

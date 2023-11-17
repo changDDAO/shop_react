@@ -13,11 +13,13 @@ return (
                <Button size="lg" variant="outline-secondary">남성의류</Button>
                <Button size="lg" variant="outline-secondary">여성의류</Button>
            </div>
+           <div className="home-showing-text">
+               Showing :{/*{}*/} items
+           </div>
        </Container>
-       <div className="home-showing-text">
-           Showing :{/*{}*/} items
-       </div>
+
        <Container className="products-container">
+
            <Card style={{ width: '15rem' }}>
                <Card.Img variant="top" src="assets/reactimg.png" />
                <Card.Body>
