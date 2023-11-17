@@ -1,37 +1,52 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Button, Card, Container, Spinner} from "react-bootstrap";
+import useProductStore, {Category} from "../states/ProductStore";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function Home(){
+    const {setProductList, productList, loading} = useProductStore();
+    useEffect(() => {
+        setProductList();
+        }, []);
+
 return (
-   <div>
+    <div>
        <Container className="home-container">
            <h2 style={{fontWeight:"bold"}}>Products</h2>
            <div className="home-btns">
-               <Button size="lg" variant="outline-secondary">모두</Button>
-               <Button size="lg" variant="outline-secondary">전자기기</Button>
-               <Button size="lg" variant="outline-secondary">쥬얼리</Button>
-               <Button size="lg" variant="outline-secondary">남성의류</Button>
-               <Button size="lg" variant="outline-secondary">여성의류</Button>
+               <Button size="lg" variant="outline-secondary"
+                       onClick={()=>{setProductList(Category.ALL)}}>모두</Button>
+               <Button size="lg" variant="outline-secondary"
+                       onClick={()=>{setProductList(Category.ELECTRONICS)}}>전자기기</Button>
+               <Button size="lg" variant="outline-secondary"
+                       onClick={()=>{setProductList(Category.JEWElERY)}}>쥬얼리</Button>
+               <Button size="lg" variant="outline-secondary"
+                       onClick={()=>{setProductList(Category.MENS)}}>남성의류</Button>
+               <Button size="lg" variant="outline-secondary"
+                       onClick={()=>{setProductList(Category.WOMENS)}}>여성의류</Button>
            </div>
            <div className="home-showing-text">
-               Showing :{/*{}*/} items
+               Showing :{productList.length} items
            </div>
        </Container>
+        {loading?(<LoadingSpinner/>):(
+       <Container className="products-container" >
+           {productList.map((product)=>(
+           <Card style={{ width: '15rem', height:"20rem",alignItems:"center", marginBottom:"10px"}} key={product.id}>
 
-       <Container className="products-container">
+               <Card.Img variant="top" src={product.image} style={{height:"150px", width:"120px"
+               ,marginTop:"15px"}}/>
 
-           <Card style={{ width: '15rem' }}>
-               <Card.Img variant="top" src="assets/reactimg.png" />
                <Card.Body>
-                   <Card.Title>ProductName</Card.Title>
+                   <h4 className="card-description">{product.title}</h4>
                    <div className="card-footer">
                    <Button variant="outline-secondary" size="sm">장바구니에 담기</Button>
-                   <div className="product-price-text">가격</div>
+                   <div className="product-price-text">${product.price}</div>
                    </div>
                </Card.Body>
            </Card>
-
-       </Container>
+               ))}
+       </Container>)}
    </div>
 );
 }

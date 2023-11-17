@@ -9,8 +9,8 @@ function BasketsPage() {
     return (
         <div>
             <h3 style={{fontWeight: "bold"}}>장바구니</h3>
-           <BasketProducts/>
-           {/* <BasketsEmpty/>*/}
+           {/*<BasketProducts/>*/}
+            <BasketsEmpty/>
 
 
 

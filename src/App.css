@@ -95,11 +95,20 @@ main{
   flex-flow: wrap;
   justify-content: space-evenly;
 }
+.card-description{
+  width:14rem;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top:20px;
+  text-overflow: ellipsis;
+  font-size:17px;
+}
 .card-footer{
-  margin-top:5px;
+  margin-top:20px;
   display:flex;
   justify-content: space-between;
-  font-size:10px;
+  font-size:17px;
   align-items: center;
   font-weight:bold;
 }
@@ -143,6 +152,12 @@ main{
   width:1.5em;
   background-color: #8d650c;
   color: white;
+}
+.loading-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
