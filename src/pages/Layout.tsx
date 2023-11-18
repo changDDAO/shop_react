@@ -6,6 +6,7 @@ import {FaUserTimes as LogoutIcon} from "react-icons/fa";
 import {Outlet, useNavigate} from 'react-router-dom';
 import {Container, Navbar} from "react-bootstrap";
 import {IconButton} from "@mui/material";
+import BasketStore from "../states/BasketStore";
 
 function Layout() {
     const navigate = useNavigate();
@@ -20,6 +21,9 @@ function Layout() {
     function goBasketsPage(){
         navigate("/baskets");
     }
+    const {inBasketList} = BasketStore();
+
+
 
     return (
         <div>
@@ -30,7 +34,7 @@ function Layout() {
                 <IconButton><CartIcon className="cart-icon"
                                       onClick={goBasketsPage}
                 style={{position:"relative"}}/>
-                <div className="cart-icon-count">1</div>
+                <div className="cart-icon-count">{inBasketList.length}</div>
                 </IconButton>
 
                 <IconButton><LoginPageIcon className="login-icon" fontSize="0.85em"

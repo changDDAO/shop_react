@@ -16,7 +16,7 @@ type ProductStore ={
     setProductList:(category?: string) =>void;
 }
 
-const useProductStore = create<ProductStore>((set)=>({
+const ProductStore = create<ProductStore>((set)=>({
     productList: [],
     loading: false,
     hasErrors: false,
@@ -39,4 +39,4 @@ const useProductStore = create<ProductStore>((set)=>({
 
     }
 }));
-export default useProductStore;
+export default ProductStore;

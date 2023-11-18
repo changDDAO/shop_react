@@ -1,10 +1,14 @@
 import React, {useEffect} from 'react'
-import {Button, Card, Container, Spinner} from "react-bootstrap";
-import useProductStore, {Category} from "../states/ProductStore";
+import {Alert, Button, Card, Container, Spinner} from "react-bootstrap";
+import {Category} from "../states/ProductStore";
 import LoadingSpinner from "../components/LoadingSpinner";
+import ProductStore from "../states/ProductStore";
+import BasketStore from "../states/BasketStore";
+import {Product} from "../states/DefinedType";
 
 function Home(){
-    const {setProductList, productList, loading} = useProductStore();
+    const {setProductList, productList, loading} = ProductStore();
+    const {addProductBasket,inBasketList} = BasketStore()
     useEffect(() => {
         setProductList();
         }, []);
@@ -40,7 +44,8 @@ return (
                <Card.Body>
                    <h4 className="card-description">{product.title}</h4>
                    <div className="card-footer">
-                   <Button variant="outline-secondary" size="sm">장바구니에 담기</Button>
+                   <Button variant="outline-secondary" size="sm"
+                           onClick={()=>{addProductBasket(product)}}>장바구니에 담기</Button>
                    <div className="product-price-text">${product.price}</div>
                    </div>
                </Card.Body>

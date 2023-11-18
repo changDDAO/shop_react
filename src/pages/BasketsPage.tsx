@@ -4,15 +4,16 @@ import {RiDeleteBin6Line as DeleteIcon} from "react-icons/ri";
 import {IconButton} from "@mui/material";
 import BasketsEmpty from "../components/baskets_components/BasketsEmpty";
 import BasketProducts from "../components/baskets_components/BasketProducts";
+import BasketStore from "../states/BasketStore";
 
 function BasketsPage() {
+     const {inBasketList, removeProductBasket, addProductBasket} =BasketStore()
     return (
         <div>
             <h3 style={{fontWeight: "bold"}}>장바구니</h3>
-           {/*<BasketProducts/>*/}
-            <BasketsEmpty/>
-
-
+            {inBasketList.length>0
+                ?(<BasketProducts/>)
+                :(<BasketsEmpty/>)}
 
         </div>
     );

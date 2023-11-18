@@ -13,3 +13,7 @@ export type Product={
     category: Category;
     image: string;
 }
+
+export type BasketProduct= Product & {
+    count: number;
+}
