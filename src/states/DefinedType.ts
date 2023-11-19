@@ -14,6 +14,6 @@ export type Product={
     image: string;
 }
 
-export type BasketProduct= Product & {
+export type BasketProductType= Product & {
     count: number;
 }
