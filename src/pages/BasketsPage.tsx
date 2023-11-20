@@ -7,7 +7,7 @@ import BasketProducts from "../components/baskets_components/BasketProducts";
 import BasketStore from "../states/BasketStore";
 
 function BasketsPage() {
-     const {inBasketList, removeProductBasket, addProductBasket} =BasketStore()
+     const {inBasketList} =BasketStore()
     return (
         <div>
             <h3 style={{fontWeight: "bold"}}>장바구니</h3>
