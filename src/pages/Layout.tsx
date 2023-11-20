@@ -59,7 +59,8 @@ function Layout() {
                 <div className="cart-icon-count">{inBasketList.length}</div>
                 </IconButton>
 
-                <IconButton onClick={goLoginPage}><LoginPageIcon className="login-icon" fontSize="0.85em"/></IconButton>
+                <IconButton onClick={goLoginPage}><LoginPageIcon className="login-icon" fontSize="0.85em"/>
+                </IconButton>
                 {loginStatus?
                     (<IconButton
                     ><LoginIcon className="lo-success-icon"  onClick={logout}/></IconButton>)
