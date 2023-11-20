@@ -10,6 +10,7 @@ import BasketStore from "../states/BasketStore";
 import UserStore from "../states/userStore";
 import {auth} from "../firebase/firebase"
 import { signOut } from '@firebase/auth';
+import Alert from 'sweetalert2';
 
 
 function Layout() {
@@ -30,8 +31,11 @@ function Layout() {
         setLoginStatus();
         setCleanEmail();
         signOut(auth)
-            .then(()=>alert("로그아웃 되었습니다."))
-            .catch(err => alert(err));
+            .then(()=>Alert.fire("로그아웃 되었습니다."))
+            .catch(err => Alert.fire({
+                text:err,
+                icon:"error",
+            }));
     }
     const {inBasketList} = BasketStore();
     const {email, loginStatus} = UserStore();
@@ -43,7 +47,7 @@ function Layout() {
         <div>
         <Navbar bg="light" className="justify-content-between navbar">
             <div>
-            <IconButton style={{marginLeft:"30px"}}><h2 className="home-btn" onClick={goHomePage}
+            <IconButton style={{marginLeft:"30px"}} onClick={goHomePage}><h2 className="home-btn"
             >SHOP</h2></IconButton>
                 <span style={{marginLeft:"10px",
                 fontSize:"15px",fontWeight:"bold"}}>

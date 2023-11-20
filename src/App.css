@@ -29,6 +29,7 @@ main{
 }
 .click-login-btn{
   margin-left: 1.7rem;
+  margin-right: 1.7rem;
 }
 
 .layout-head{
@@ -121,6 +122,11 @@ main{
 }
 .baskets-left-section{
   display:flex;
+}
+.basket-title:hover{
+  color:darkblue;
+  font-style:italic;
+  font-size: 24px;
 }
 .baskets-left-img{
   border-radius:20px;
