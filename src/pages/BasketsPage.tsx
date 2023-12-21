@@ -12,8 +12,8 @@ function BasketsPage() {
         <div>
             <h3 style={{fontWeight: "bold"}}>장바구니</h3>
             {inBasketList.length>0
-                ?(<BasketProducts/>)
-                :(<BasketsEmpty/>)}
+                ?<BasketProducts/>
+                :<BasketsEmpty/>}
 
         </div>
     );

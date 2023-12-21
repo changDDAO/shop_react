@@ -91,10 +91,11 @@ main{
 }
 .products-container{
   margin-top:15px;
-  width:1.2rem;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 300px;
+  gap: 30px;
+
 }
 .card-description{
   width:14rem;

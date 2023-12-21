@@ -32,9 +32,9 @@ const ProductStore = create<ProductStore>((set)=>({
                 productList: [...response.data]
             }));
         }catch(error){
-            set(()=>({hasErrors:true, loading:false}))
+            set((state)=>({hasErrors:true, loading:false}))
         }finally{
-            set(()=>({loading:false}))
+            set((state)=>({loading:false}))
         }
 
     }

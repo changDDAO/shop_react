@@ -1,6 +1,7 @@
 import {create} from 'zustand';
 import {BasketProductType, Product} from "./DefinedType";
 
+
 type BasketStore = {
     inBasketList: BasketProductType[];
     addProductBasket: (product: Product) => void;
@@ -22,13 +23,13 @@ const BasketStore = create<BasketStore>((set) => ({
             /*장바구니에 중복된 상품을 담지 못하도록 처리한다.
             이미 장바구니에 담겨 있는 상품의 '장바구니 담기'버튼을 클릭했을 때, 그 상품의 count 갯수만 늘려준다.*/
             const duplicateProduct = state.inBasketList.find(
-                (product) => product.id === newProduct.id
+                product => product.id === newProduct.id
             )
             //장바구니에 이미 담겨있는 상품의 장바구니담기 버튼을 클릭했을 때,
             if (duplicateProduct) {
                 return {
                     inBasketList: state.inBasketList.map(
-                        (p) => p.id === newProduct.id
+                        p => p.id === newProduct.id
                             ? {...p, count: p.count + 1}
                             : p)
                 }
@@ -73,9 +74,9 @@ const BasketStore = create<BasketStore>((set) => ({
     },
     //현재 inBasketList에 담겨있는 전체상품의 가격들을 합산하여 total의 상태를 변화시켜줄 함수이다.
     calcTotal:() =>{
-        set((state) => {
+        set(state => {
           const total = state.inBasketList.reduce(
-              (sum, product)=>sum+(product.price*product.count), 0)
+              (sum, product)=>sum+(product.price*product.count), 0);
           return {
               total: total,
           }
